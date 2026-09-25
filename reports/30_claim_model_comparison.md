@@ -1,0 +1,41 @@
+# AssureX Claim Verification Engine - 30-Claim Model Comparison Report
+
+## System Performance Summary
+
+- **Total Claims Evaluated:** 30
+- **System Output Accuracy:** 76.67%
+
+## Detailed Comparison Table
+
+| Claim_ID   | Ground_Truth_Class   | ML_Tabular_Prediction   | ML_Confidence   | Final_Rule_Verdict   | Action_Required                                            | Policy_Flags                                               |
+|:-----------|:---------------------|:------------------------|:----------------|:---------------------|:-----------------------------------------------------------|:-----------------------------------------------------------|
+| CLM-1414   | Manual Review        | Manual Review           | 63.2%           | Manual Review        | Hold claim and verify prior payout records.                | WARNING: Duplicate claim detected for serial number.       |
+| CLM-0084   | Valid Claim          | Valid Claim             | 76.8%           | Valid Claim          | Proceed with normal automated routing.                     | None                                                       |
+| CLM-0007   | Valid Claim          | Valid Claim             | 80.2%           | Valid Claim          | Proceed with normal automated routing.                     | None                                                       |
+| CLM-0944   | Invalid Claim        | Invalid Claim           | 63.3%           | Manual Review        | Route to human claims auditor for serial verification.     | WARNING: Serial number mismatch between receipt and claim. |
+| CLM-1167   | Manual Review        | Manual Review           | 92.0%           | Manual Review        | Proceed with normal automated routing.                     | None                                                       |
+| CLM-0135   | Valid Claim          | Valid Claim             | 80.8%           | Valid Claim          | Proceed with normal automated routing.                     | None                                                       |
+| CLM-0420   | Valid Claim          | Valid Claim             | 77.2%           | Valid Claim          | Proceed with normal automated routing.                     | None                                                       |
+| CLM-0008   | Valid Claim          | Valid Claim             | 77.4%           | Valid Claim          | Proceed with normal automated routing.                     | None                                                       |
+| CLM-0577   | Invalid Claim        | Invalid Claim           | 91.2%           | Manual Review        | Route to human claims auditor for serial verification.     | WARNING: Serial number mismatch between receipt and claim. |
+| CLM-0891   | Invalid Claim        | Invalid Claim           | 98.3%           | Invalid Claim        | Proceed with normal automated routing.                     | None                                                       |
+| CLM-1055   | Manual Review        | Manual Review           | 69.0%           | Manual Review        | Hold claim and verify prior payout records.                | WARNING: Duplicate claim detected for serial number.       |
+| CLM-1164   | Manual Review        | Manual Review           | 63.0%           | Manual Review        | Hold claim and verify prior payout records.                | WARNING: Duplicate claim detected for serial number.       |
+| CLM-0359   | Valid Claim          | Valid Claim             | 73.9%           | Manual Review        | Secondary human review required due to model uncertainty.  | ML CONFIDENCE: Model confidence below threshold (73.9%).   |
+| CLM-0787   | Invalid Claim        | Invalid Claim           | 68.4%           | Manual Review        | Route to human claims auditor for serial verification.     | WARNING: Serial number mismatch between receipt and claim. |
+| CLM-0269   | Valid Claim          | Valid Claim             | 81.2%           | Valid Claim          | Proceed with normal automated routing.                     | None                                                       |
+| CLM-0777   | Invalid Claim        | Invalid Claim           | 52.5%           | Manual Review        | Route to human claims auditor for serial verification.     | WARNING: Serial number mismatch between receipt and claim. |
+| CLM-0477   | Valid Claim          | Valid Claim             | 77.5%           | Valid Claim          | Proceed with normal automated routing.                     | None                                                       |
+| CLM-0898   | Invalid Claim        | Invalid Claim           | 88.4%           | Invalid Claim        | Automatic Rejection due to expired warranty.               | POLICY: Product warranty period has expired.               |
+| CLM-0476   | Valid Claim          | Valid Claim             | 79.3%           | Valid Claim          | Proceed with normal automated routing.                     | None                                                       |
+| CLM-0980   | Invalid Claim        | Invalid Claim           | 98.1%           | Invalid Claim        | Proceed with normal automated routing.                     | None                                                       |
+| CLM-1269   | Manual Review        | Manual Review           | 87.4%           | Manual Review        | Proceed with normal automated routing.                     | None                                                       |
+| CLM-0321   | Valid Claim          | Valid Claim             | 77.9%           | Valid Claim          | Proceed with normal automated routing.                     | None                                                       |
+| CLM-1085   | Manual Review        | Manual Review           | 92.7%           | Invalid Claim        | Automatic Rejection due to invalid transaction chronology. | CRITICAL: Claim date precedes purchase date.               |
+| CLM-0494   | Valid Claim          | Valid Claim             | 78.7%           | Valid Claim          | Proceed with normal automated routing.                     | None                                                       |
+| CLM-0523   | Invalid Claim        | Invalid Claim           | 100.0%          | Invalid Claim        | Proceed with normal automated routing.                     | None                                                       |
+| CLM-0703   | Invalid Claim        | Invalid Claim           | 100.0%          | Manual Review        | Route to human claims auditor for serial verification.     | WARNING: Serial number mismatch between receipt and claim. |
+| CLM-0202   | Valid Claim          | Valid Claim             | 80.4%           | Valid Claim          | Proceed with normal automated routing.                     | None                                                       |
+| CLM-0999   | Invalid Claim        | Invalid Claim           | 99.9%           | Invalid Claim        | Proceed with normal automated routing.                     | None                                                       |
+| CLM-0423   | Valid Claim          | Valid Claim             | 78.6%           | Valid Claim          | Proceed with normal automated routing.                     | None                                                       |
+| CLM-1245   | Manual Review        | Manual Review           | 65.3%           | Manual Review        | Hold claim and verify prior payout records.                | WARNING: Duplicate claim detected for serial number.       |
