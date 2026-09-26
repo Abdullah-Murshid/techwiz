@@ -1,0 +1,49 @@
+{
+  "categories": {
+    "Washing Machine": {
+      "standard_warranty_months": 24,
+      "max_claim_reporting_days": 730,
+      "covered_faults": ["Motor Failure", "Water Leakage", "Board Defect", "Power Failure", "Overheating"],
+      "excluded_faults": ["Cosmetic Scratches", "Physical Impact", "User Misuse"],
+      "required_documents": ["Has_Receipt", "Has_Warranty_Card"],
+      "allow_unauthorized_repairs": false,
+      "require_serial_match": true
+    },
+    "Laptop": {
+      "standard_warranty_months": 12,
+      "max_claim_reporting_days": 365,
+      "covered_faults": ["Screen Damage", "Power Failure", "Board Defect", "Overheating"],
+      "excluded_faults": ["Liquid Spill", "Cracked Screen from Fall"],
+      "required_documents": ["Has_Receipt", "Has_Warranty_Card"],
+      "allow_unauthorized_repairs": false,
+      "require_serial_match": true
+    },
+    "Refrigerator": {
+      "standard_warranty_months": 24,
+      "max_claim_reporting_days": 730,
+      "covered_faults": ["Motor Failure", "Power Failure", "Water Leakage", "Overheating", "Board Defect"],
+      "excluded_faults": ["External Body Rust", "User Misuse"],
+      "required_documents": ["Has_Receipt", "Has_Warranty_Card"],
+      "allow_unauthorized_repairs": false,
+      "require_serial_match": true
+    },
+    "Smartphone": {
+      "standard_warranty_months": 12,
+      "max_claim_reporting_days": 365,
+      "covered_faults": ["Screen Damage", "Power Failure", "Board Defect", "Overheating"],
+      "excluded_faults": ["Water Submersion", "Unauthorized Screen Replacement"],
+      "required_documents": ["Has_Receipt", "Has_Warranty_Card", "Has_Damage_Photo"],
+      "allow_unauthorized_repairs": false,
+      "require_serial_match": true
+    },
+    "Default": {
+      "standard_warranty_months": 12,
+      "max_claim_reporting_days": 365,
+      "covered_faults": ["Motor Failure", "Screen Damage", "Power Failure", "Water Leakage", "Overheating", "Board Defect"],
+      "excluded_faults": ["User Misuse"],
+      "required_documents": ["Has_Receipt"],
+      "allow_unauthorized_repairs": false,
+      "require_serial_match": true
+    }
+  }
+}

@@ -1,31 +1,31 @@
-Claim_ID,Ground_Truth_Class,ML_Tabular_Prediction,ML_Confidence,Final_Rule_Verdict,Action_Required,Policy_Flags
-CLM-1414,Manual Review,Manual Review,63.2%,Manual Review,Hold claim and verify prior payout records.,WARNING: Duplicate claim detected for serial number.
-CLM-0084,Valid Claim,Valid Claim,76.8%,Valid Claim,Proceed with normal automated routing.,None
-CLM-0007,Valid Claim,Valid Claim,80.2%,Valid Claim,Proceed with normal automated routing.,None
-CLM-0944,Invalid Claim,Invalid Claim,63.3%,Manual Review,Route to human claims auditor for serial verification.,WARNING: Serial number mismatch between receipt and claim.
-CLM-1167,Manual Review,Manual Review,92.0%,Manual Review,Proceed with normal automated routing.,None
-CLM-0135,Valid Claim,Valid Claim,80.8%,Valid Claim,Proceed with normal automated routing.,None
-CLM-0420,Valid Claim,Valid Claim,77.2%,Valid Claim,Proceed with normal automated routing.,None
-CLM-0008,Valid Claim,Valid Claim,77.4%,Valid Claim,Proceed with normal automated routing.,None
-CLM-0577,Invalid Claim,Invalid Claim,91.2%,Manual Review,Route to human claims auditor for serial verification.,WARNING: Serial number mismatch between receipt and claim.
-CLM-0891,Invalid Claim,Invalid Claim,98.3%,Invalid Claim,Proceed with normal automated routing.,None
-CLM-1055,Manual Review,Manual Review,69.0%,Manual Review,Hold claim and verify prior payout records.,WARNING: Duplicate claim detected for serial number.
-CLM-1164,Manual Review,Manual Review,63.0%,Manual Review,Hold claim and verify prior payout records.,WARNING: Duplicate claim detected for serial number.
-CLM-0359,Valid Claim,Valid Claim,73.9%,Manual Review,Secondary human review required due to model uncertainty.,ML CONFIDENCE: Model confidence below threshold (73.9%).
-CLM-0787,Invalid Claim,Invalid Claim,68.4%,Manual Review,Route to human claims auditor for serial verification.,WARNING: Serial number mismatch between receipt and claim.
-CLM-0269,Valid Claim,Valid Claim,81.2%,Valid Claim,Proceed with normal automated routing.,None
-CLM-0777,Invalid Claim,Invalid Claim,52.5%,Manual Review,Route to human claims auditor for serial verification.,WARNING: Serial number mismatch between receipt and claim.
-CLM-0477,Valid Claim,Valid Claim,77.5%,Valid Claim,Proceed with normal automated routing.,None
-CLM-0898,Invalid Claim,Invalid Claim,88.4%,Invalid Claim,Automatic Rejection due to expired warranty.,POLICY: Product warranty period has expired.
-CLM-0476,Valid Claim,Valid Claim,79.3%,Valid Claim,Proceed with normal automated routing.,None
-CLM-0980,Invalid Claim,Invalid Claim,98.1%,Invalid Claim,Proceed with normal automated routing.,None
-CLM-1269,Manual Review,Manual Review,87.4%,Manual Review,Proceed with normal automated routing.,None
-CLM-0321,Valid Claim,Valid Claim,77.9%,Valid Claim,Proceed with normal automated routing.,None
-CLM-1085,Manual Review,Manual Review,92.7%,Invalid Claim,Automatic Rejection due to invalid transaction chronology.,CRITICAL: Claim date precedes purchase date.
-CLM-0494,Valid Claim,Valid Claim,78.7%,Valid Claim,Proceed with normal automated routing.,None
-CLM-0523,Invalid Claim,Invalid Claim,100.0%,Invalid Claim,Proceed with normal automated routing.,None
-CLM-0703,Invalid Claim,Invalid Claim,100.0%,Manual Review,Route to human claims auditor for serial verification.,WARNING: Serial number mismatch between receipt and claim.
-CLM-0202,Valid Claim,Valid Claim,80.4%,Valid Claim,Proceed with normal automated routing.,None
-CLM-0999,Invalid Claim,Invalid Claim,99.9%,Invalid Claim,Proceed with normal automated routing.,None
-CLM-0423,Valid Claim,Valid Claim,78.6%,Valid Claim,Proceed with normal automated routing.,None
-CLM-1245,Manual Review,Manual Review,65.3%,Manual Review,Hold claim and verify prior payout records.,WARNING: Duplicate claim detected for serial number.
+Claim_ID,Ground_Truth_Class,ML_Tabular_Prediction,ML_Confidence,TM_Visual_Prediction,TM_Confidence,Model_Consensus,Final_Verdict,Action_Required,Policy_Flags
+CLM-1414,Manual Review,Manual Review,74.6%,Manual Review,39.3%,Uncertain Result,Manual Review Required,Hold claim for fraud team audit due to duplicate record flag.,SECURITY: Duplicate document hash / claim serial detected (Potential Fraud Risk).
+CLM-0084,Valid Claim,Valid Claim,97.0%,Manual Review,40.8%,Model Disagreement,Manual Review Required,Proceed with automated routing.,None
+CLM-0007,Valid Claim,Valid Claim,97.2%,Manual Review,44.6%,Model Disagreement,Manual Review Required,Proceed with automated routing.,None
+CLM-0944,Invalid Claim,Invalid Claim,100.0%,Manual Review,40.1%,Model Disagreement,Likely Invalid,Proceed with automated routing.,POLICY: Product warranty expired (Product Age: 30.1 mos > Max Warranty: 24 mos). | MISSING DOCUMENT: Required document 'Warranty Card' is missing. | VERIFICATION: Serial number mismatch between receipt and physical device.
+CLM-1167,Manual Review,Manual Review,87.5%,Manual Review,35.6%,Uncertain Result,Manual Review Required,Route to human reviewer for non-standard fault coverage assessment.,CRITICAL: Claim date precedes purchase date (Chronology Contradiction). | COVERAGE: Fault 'Motor Failure' is not listed under covered issues for Smartphone.
+CLM-0135,Valid Claim,Valid Claim,98.2%,Manual Review,38.6%,Model Disagreement,Manual Review Required,Proceed with automated routing.,None
+CLM-0420,Valid Claim,Valid Claim,71.2%,Manual Review,44.1%,Model Disagreement,Manual Review Required,Secondary human review required due to model uncertainty.,ML CONFIDENCE: Model prediction score below threshold (71.2%).
+CLM-0008,Valid Claim,Valid Claim,70.2%,Manual Review,39.8%,Model Disagreement,Manual Review Required,Route to human reviewer for non-standard fault coverage assessment.,COVERAGE: Fault 'Screen Damage' is not listed under covered issues for Refrigerator.
+CLM-0577,Invalid Claim,Invalid Claim,100.0%,Manual Review,36.3%,Model Disagreement,Likely Invalid,Automatic Rejection due to uncertified prior repair.,MISSING DOCUMENT: Required document 'Warranty Card' is missing. | VERIFICATION: Serial number mismatch between receipt and physical device. | POLICY: Uncertified prior repair detected; voids standard manufacturer coverage.
+CLM-0891,Invalid Claim,Invalid Claim,94.0%,Manual Review,43.1%,Model Disagreement,Likely Invalid,Proceed with automated routing.,POLICY: Product warranty expired (Product Age: 25.3 mos > Max Warranty: 24 mos). | VERIFICATION: Serial number mismatch between receipt and physical device.
+CLM-1055,Manual Review,Manual Review,88.4%,Manual Review,38.6%,Uncertain Result,Likely Invalid,Automatic Rejection due to invalid transaction timeline.,CRITICAL: Claim date precedes purchase date (Chronology Contradiction).
+CLM-1164,Manual Review,Manual Review,83.8%,Manual Review,36.5%,Uncertain Result,Manual Review Required,Route to human reviewer for non-standard fault coverage assessment.,CRITICAL: Claim date precedes purchase date (Chronology Contradiction). | COVERAGE: Fault 'Water Leakage' is not listed under covered issues for Smartphone.
+CLM-0359,Valid Claim,Valid Claim,64.1%,Manual Review,37.1%,Model Disagreement,Manual Review Required,Secondary human review required due to model uncertainty.,ML CONFIDENCE: Model prediction score below threshold (64.1%).
+CLM-0787,Invalid Claim,Invalid Claim,97.4%,Manual Review,34.1%,Model Disagreement,Likely Invalid,Automatic Rejection due to uncertified prior repair.,POLICY: Uncertified prior repair detected; voids standard manufacturer coverage.
+CLM-0269,Valid Claim,Valid Claim,97.0%,Manual Review,43.9%,Model Disagreement,Manual Review Required,Route to human reviewer for non-standard fault coverage assessment.,COVERAGE: Fault 'Screen Damage' is not listed under covered issues for Washing Machine.
+CLM-0777,Invalid Claim,Invalid Claim,98.2%,Manual Review,35.2%,Model Disagreement,Likely Invalid,Automatic Rejection due to uncertified prior repair.,VERIFICATION: Serial number mismatch between receipt and physical device. | POLICY: Uncertified prior repair detected; voids standard manufacturer coverage.
+CLM-0477,Valid Claim,Valid Claim,69.3%,Manual Review,40.8%,Model Disagreement,Manual Review Required,Route to human reviewer for non-standard fault coverage assessment.,COVERAGE: Fault 'Screen Damage' is not listed under covered issues for Refrigerator.
+CLM-0898,Invalid Claim,Invalid Claim,96.4%,Manual Review,34.9%,Model Disagreement,Likely Invalid,Automatic Rejection due to uncertified prior repair.,POLICY: Uncertified prior repair detected; voids standard manufacturer coverage.
+CLM-0476,Valid Claim,Valid Claim,67.8%,Manual Review,42.4%,Model Disagreement,Manual Review Required,Secondary human review required due to model uncertainty.,ML CONFIDENCE: Model prediction score below threshold (67.8%).
+CLM-0980,Invalid Claim,Invalid Claim,99.2%,Manual Review,38.4%,Model Disagreement,Likely Invalid,Automatic Rejection due to uncertified prior repair.,VERIFICATION: Serial number mismatch between receipt and physical device. | POLICY: Uncertified prior repair detected; voids standard manufacturer coverage.
+CLM-1269,Manual Review,Manual Review,89.3%,Manual Review,36.6%,Uncertain Result,Likely Invalid,Automatic Rejection due to invalid transaction timeline.,CRITICAL: Claim date precedes purchase date (Chronology Contradiction).
+CLM-0321,Valid Claim,Valid Claim,70.2%,Manual Review,34.9%,Model Disagreement,Manual Review Required,Route to human reviewer for non-standard fault coverage assessment.,COVERAGE: Fault 'Water Leakage' is not listed under covered issues for Smartphone.
+CLM-1085,Manual Review,Manual Review,89.3%,Manual Review,42.8%,Uncertain Result,Likely Invalid,Automatic Rejection due to invalid transaction timeline.,CRITICAL: Claim date precedes purchase date (Chronology Contradiction).
+CLM-0494,Valid Claim,Valid Claim,68.5%,Manual Review,37.1%,Model Disagreement,Manual Review Required,Route to human reviewer for non-standard fault coverage assessment.,COVERAGE: Fault 'Water Leakage' is not listed under covered issues for Smartphone.
+CLM-0523,Invalid Claim,Invalid Claim,100.0%,Manual Review,37.5%,Model Disagreement,Likely Invalid,Automatic Rejection due to uncertified prior repair.,COVERAGE: Fault 'Motor Failure' is not listed under covered issues for Smartphone. | MISSING DOCUMENT: Required document 'Warranty Card' is missing. | VERIFICATION: Serial number mismatch between receipt and physical device. | POLICY: Uncertified prior repair detected; voids standard manufacturer coverage.
+CLM-0703,Invalid Claim,Invalid Claim,98.3%,Manual Review,43.1%,Model Disagreement,Likely Invalid,Proceed with automated routing.,POLICY: Product warranty expired (Product Age: 35.6 mos > Max Warranty: 24 mos). | MISSING DOCUMENT: Required document 'Warranty Card' is missing.
+CLM-0202,Valid Claim,Valid Claim,97.6%,Manual Review,38.1%,Model Disagreement,Manual Review Required,Proceed with automated routing.,None
+CLM-0999,Invalid Claim,Invalid Claim,100.0%,Manual Review,44.0%,Model Disagreement,Likely Invalid,Proceed with automated routing.,POLICY: Product warranty expired (Product Age: 32.0 mos > Max Warranty: 24 mos). | MISSING DOCUMENT: Required document 'Warranty Card' is missing. | VERIFICATION: Serial number mismatch between receipt and physical device.
+CLM-0423,Valid Claim,Valid Claim,96.9%,Manual Review,34.5%,Model Disagreement,Manual Review Required,Route to human reviewer for non-standard fault coverage assessment.,COVERAGE: Fault 'Screen Damage' is not listed under covered issues for Washing Machine.
+CLM-1245,Manual Review,Manual Review,88.6%,Manual Review,38.0%,Uncertain Result,Likely Invalid,Automatic Rejection due to invalid transaction timeline.,CRITICAL: Claim date precedes purchase date (Chronology Contradiction).

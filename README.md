@@ -155,3 +155,12 @@ numpy
 tabulate
 pytest
 ```
+
+
+## auth credentials 
+# admin
+# admin123 
+
+## user 
+# samad-r
+# 12345

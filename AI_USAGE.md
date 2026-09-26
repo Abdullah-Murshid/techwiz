@@ -1,1 +1,0 @@
-pakora kha lo 
